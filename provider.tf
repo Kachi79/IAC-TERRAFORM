@@ -44,7 +44,7 @@ resource "aws_instance" "kosi_nig" {
 
 resource "aws_instance" "new-instance" {
   ami           = "ami-0014ce3e52359afbd"
-  instance_type = "t3.medium"
+  instance_type = "t3.micro"
   provider      = aws.eu-north-1
 
 }
@@ -56,3 +56,10 @@ resource "aws_instance" "jess_kal" {
 
 }
 
+output "public_ip" {
+  description = "public ip address of EC2 instance"
+  value = aws_instance.jess_kal.public_ip
+}
+
+
+  

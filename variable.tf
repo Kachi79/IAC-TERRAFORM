@@ -9,3 +9,5 @@ variable "kamsibucket" {
   description = "s3-bucket"
   default     = "kamsibucket555555"
 }
+
+
