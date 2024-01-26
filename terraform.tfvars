@@ -25,6 +25,6 @@ nic_name = {
 }
 
 sg_name = {
-  "Name" = "modules_sg"
+  "Name" = "MODULES_SG"
 }
 
