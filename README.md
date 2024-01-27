@@ -6,3 +6,6 @@ after this structure has been neatly arranged, we must also have a main.tf file 
 
 ## TFVARS
 The tfvars file is used essentially to pass values for different environments like dev, staging etc. If you do not pass values in the tfvars file, terraform will use the default values in the variable.tf file.
+
+## config file
+As best practice, keep the terraform.tfvars file inside the config folder and when using terraform plan command it's like this : terraform plan --var-file="config/terraform.tfvars"
