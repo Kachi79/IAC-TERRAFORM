@@ -66,4 +66,3 @@ variable "sg_name" {
 }
 
 
-
