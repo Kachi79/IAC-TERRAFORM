@@ -1,17 +1,3 @@
-## This is a new project on multi region deployment
-To provision an aws resource in 2 separate availabilty zones this is the code :
-The provider can be in different file in the working directory.
-
-
-
-provider "aws" {
-  region = "eu-west-2"
-}
-
-provider "aws" {
-  alias  = "west-1"
-  region = "eu-west-1"
-}
 
 
 resource "aws_instance" "multi-region" {
