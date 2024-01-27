@@ -9,3 +9,5 @@ The tfvars file is used essentially to pass values for different environments li
 
 ## config file
 As best practice, keep the terraform.tfvars file inside the config folder and when using terraform plan command it's like this : terraform plan --var-file="config/terraform.tfvars"
+
+## Creating multiple resources using for_each Loops
