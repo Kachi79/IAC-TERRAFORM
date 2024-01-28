@@ -65,4 +65,6 @@ variable "sg_name" {
 
 }
 
-
+variable "instance_config" {
+  type = map(any)
+}

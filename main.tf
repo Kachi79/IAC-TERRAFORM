@@ -1,9 +1,10 @@
 module "instance" {
   source        = "./modules-2/aws_instance"
-  instance_ami  = var.instance_ami
-  instance_type = var.instance_type
-  nic_id        = module.nic.nic_id
-  instance_name = var.instance_name
+  for_each      = var.instance_config
+  instance_ami  = each.value.instance_ami
+  instance_type = each.value.instance_type
+  nic_id        = module.nic[each.key].nic_id
+  instance_name = each.value.instance_name
 }
 
 module "sg" {
@@ -21,9 +22,10 @@ module "subnet" {
 
 module "nic" {
   source      = "./modules-2/nic"
+  for_each    = var.instance_config
   subnet_id   = module.subnet.subnet_id
-  private_ips = var.private_ips
-  nic_name    = var.nic_name
+  private_ips = each.value.private_ips
+  nic_name    = each.value.nic_name
 
 }
 
