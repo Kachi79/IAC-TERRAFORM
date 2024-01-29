@@ -5,7 +5,7 @@ variable "instance_ami" {
 
 variable "instance_type" {
   type    = string
-  default = "t2.medium"
+  default = "t2.micro"
 }
 
 variable "instance_name" {
@@ -30,7 +30,7 @@ variable "vpc_tag" {
 variable "sg_name" {
   type = map(any)
   default = {
-    "Name" = "allow_tls"
+    "Name" = "sg_ingress_rule"
   }
 }
 
@@ -54,6 +54,14 @@ variable "aws_sg" {
       port        = 443
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
+
+    }
+    "8080" = {
+      description = "ingress_rule3"
+      port        = 8080
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+
     }
   }
-} 
+}
