@@ -63,5 +63,12 @@ variable "aws_sg" {
       cidr_blocks = ["0.0.0.0/0"]
 
     }
+    "9000" = {
+      description = "ingress_rule4"
+      port        = 9000
+      protocol    = "tcp"
+      cidr_blocks = ["0.0.0.0/0"]
+
+    }
   }
 }
