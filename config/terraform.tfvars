@@ -1,21 +1,29 @@
-ami = "ami-0ff1c68c6e837b183" 
+vpc_name = {"Name" = "Default_VPC"}
 
-instance_type = "t2.medium"
+subnet_name = {"Name"= "Default_subnet_eu-west-2b"}
 
-instance_tag = {"Name" = "development_tag"}
- 
-private_ips = ["172.16.10.100"]
+sg_name = {"Name" = "default_sg"}
 
-nic_name = {"Name" = "major_network_interface"}
+aws_sg  = {
+    "8080" = {
+       description = "allow_port 8080 traffic"
+       port        = 8080
+       protocol    = "tcp"
+       cidr_blocks = ["0.0.0.0/0"]
+    }
+    "22" = {
+       description = "allow ssh traffic"
+       port        = 22
+       protocol    = "tcp"
+       cidr_blocks = ["0.0.0.0/0"]
+    }
 
-sg_name = {"Name" = "dev_sg"}
 
-subnet_cidr = "172.16.10.0/24"
 
-avail_zone = "eu-west-2a"
+}
 
-subnet_name = {"name" = "dev_subnet"}
+ami = "ami-0e5f882be1900e43b"
 
-vpc_cidr = "172.16.0.0/16"
+instance_type = "t2.large"
 
-vpc_name = {"Name" = "dev_vpc"}
+instance_name = {"Name" = "default_ec2"}
