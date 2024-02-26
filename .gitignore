@@ -1,3 +1,38 @@
-.terraform
-terraform.tfvars
-.terraform.lock.hcl
+# Ignore Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Ignore Terraform generated files
+.terraform/
+terraform.tfstate.d/
+
+# Ignore auto-generated variable files
+*.terraform.tfvars
+
+# Ignore environment-specific overrides
+*.override.tf
+
+# Ignore logs and temporary files
+*.log
+*.plan
+
+# Ignore operating system and editor-specific files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vim/
+
+# Ignore Terraform CLI configuration files
+terraform.rc
+.terraformrc
+
+# Ignore backup files
+*~
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore Visual Studio Code directory
+.vscode/
